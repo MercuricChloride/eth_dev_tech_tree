@@ -6,8 +6,8 @@ export function DataNode({ data }: NodeProps) {
     <div
       style={{
         display: "flex",
-        border: "3px solid #000",
-        backgroundColor: "grey",
+        border: "1px solid #000",
+        backgroundColor: "#fff",
         flexDirection: "column",
         width: "150px",
       }}

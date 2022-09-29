@@ -4,7 +4,7 @@ import dagre from "dagre";
 export const dataNodes: DataNode[] = [
   {
     id: 1,
-    title: "Node 1",
+    title: "Challenge 1",
     description: "This is some sample text to show how the description works.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
@@ -12,29 +12,84 @@ export const dataNodes: DataNode[] = [
   },
   {
     id: 2,
-    title: "Node 2",
+    title: "Challenge 2",
     description: "This is some sample text to show how the description works.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
-    dependencies: [3, 4, 5],
+    dependencies: [3],
   },
   {
     id: 3,
-    title: "Node 3",
+    title: "Challenge 3",
     description: "This is some sample text to show how the description works.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
+    dependencies: [4],
   },
   {
     id: 4,
-    title: "Node 4",
+    title: "Challenge 4",
+    description: "This is some sample text to show how the description works.",
+    link: "https://www.google.com",
+    image: "https://picsum.photos/200",
+    dependencies: [5, 6, 7, 8],
+  },
+  {
+    id: 5,
+    title: "Defi",
+    description: "This is some sample text to show how the description works.",
+    link: "https://www.google.com",
+    image: "https://picsum.photos/200",
+    dependencies: [9],
+  },
+  {
+    id: 6,
+    title: "NFT",
+    description: "This is some sample text to show how the description works.",
+    link: "https://www.google.com",
+    image: "https://picsum.photos/200",
+    dependencies: [10],
+  },
+  {
+    id: 7,
+    title: "Infrastructure",
+    description: "This is some sample text to show how the description works.",
+    link: "https://www.google.com",
+    image: "https://picsum.photos/200",
+    dependencies: [11],
+  },
+  {
+    id: 8,
+    title: "Scripts",
+    description: "This is some sample text to show how the description works.",
+    link: "https://www.google.com",
+    image: "https://picsum.photos/200",
+    dependencies: [12],
+  },
+  {
+    id: 9,
+    title: "Simple ERC20",
     description: "This is some sample text to show how the description works.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
-    id: 5,
-    title: "Node 5",
+    id: 10,
+    title: "Simple NFT",
+    description: "This is some sample text to show how the description works.",
+    link: "https://www.google.com",
+    image: "https://picsum.photos/200",
+  },
+  {
+    id: 11,
+    title: "Running your own node",
+    description: "This is some sample text to show how the description works.",
+    link: "https://www.google.com",
+    image: "https://picsum.photos/200",
+  },
+  {
+    id: 12,
+    title: "Advanced Ethers.js",
     description: "This is some sample text to show how the description works.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
@@ -52,6 +107,7 @@ export function getNodesFromDataNodes(dataNodes: DataNode[]) {
         x: dataNodes.indexOf(dataNode) * 100,
         y: dataNodes.indexOf(dataNode) * 50,
       },
+      draggable: false,
       data: {
         label: dataNode.title,
         description: dataNode.description,
@@ -73,7 +129,8 @@ function getEdgesFromDataNodes(dataNodes: DataNode[]) {
           id: `${node.id}-${dependency}`,
           source: String(node.id),
           target: String(dependency),
-          type: "straight",
+          type: "bezier",
+          label: "UNLOCKS",
         });
       }
     }
@@ -94,8 +151,8 @@ export interface DataNode {
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-const nodeWidth = 172;
-const nodeHeight = 36;
+const nodeWidth = 300;
+const nodeHeight = 150;
 
 export const getLayoutedElements = (
   nodes: Node[],
@@ -120,8 +177,6 @@ export const getLayoutedElements = (
     node.targetPosition = isHorizontal ? Position.Left : Position.Top;
     node.sourcePosition = isHorizontal ? Position.Right : Position.Bottom;
 
-    // We are shifting the dagre node position (anchor=center center) to the top left
-    // so it matches the React Flow node anchor point (top left).
     node.position = {
       x: nodeWithPosition.x - nodeWidth / 2,
       y: nodeWithPosition.y - nodeHeight / 2,
