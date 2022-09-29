@@ -9,6 +9,7 @@ export function DataNode({ data }: NodeProps) {
         border: "3px solid #000",
         backgroundColor: "grey",
         flexDirection: "column",
+        width: "150px",
       }}
     >
       <Handle type="target" position={Position.Left} />

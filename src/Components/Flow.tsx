@@ -10,15 +10,21 @@ import ReactFlow, {
 // 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
 import { DataNode } from "./DataNode";
-import { nodeData, edgeData } from "../Data";
+import { nodeData, edgeData, getLayoutedElements } from "../Data";
 
 const nodeTypes = {
   dataNode: DataNode,
 };
 
+const { layoutNodes, layoutEdges } = getLayoutedElements(
+  nodeData,
+  edgeData,
+  "LR"
+);
+
 export function Flow() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(nodeData);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(edgeData);
+  const [nodes, setNodes, onNodesChange] = useNodesState(layoutNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(layoutEdges);
 
   const onConnect = useCallback(
     (params: any) => setEdges((eds) => addEdge(params, eds)),
