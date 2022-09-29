@@ -24,7 +24,7 @@ const { layoutNodes, layoutEdges } = getLayoutedElements(
 
 export function Flow() {
   //   const [nodes, setNodes, onNodesChange] = useNodesState(layoutNodes);
-  const [nodes, _, onNodesChange] = useNodesState(layoutNodes);
+  const [nodes, , onNodesChange] = useNodesState(layoutNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutEdges);
 
   const onConnect = useCallback(
