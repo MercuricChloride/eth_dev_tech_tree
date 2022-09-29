@@ -1,7 +1,8 @@
 import { Handle, NodeProps, Position } from "reactflow";
 
 export function DataNode({ data }: NodeProps) {
-  const { label, description, link, image, tg } = data;
+  // const { label, description, link, image, tg } = data;
+  const { label, description } = data;
   return (
     <div
       style={{
