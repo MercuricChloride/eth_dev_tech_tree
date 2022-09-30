@@ -11,6 +11,7 @@ export function DataNode({ data }: NodeProps) {
         backgroundColor: "#fff",
         flexDirection: "column",
         width: "150px",
+        padding: "10px 25px",
       }}
     >
       <Handle type="target" position={Position.Left} />
