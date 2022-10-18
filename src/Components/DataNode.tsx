@@ -22,7 +22,7 @@ export function DataNode({ data }: NodeProps) {
         }}
       >
         <h3>{label}</h3>
-        <h3>🏗️</h3>
+        {/* <h3>🏗️</h3> */}
       </div>
       <p>{description}</p>
       <Handle type="source" position={Position.Right} />
