@@ -100,7 +100,7 @@ export const nodeData = getNodesFromDataNodes(dataNodes);
 export const edgeData = getEdgesFromDataNodes(dataNodes);
 
 export function getNodesFromDataNodes(dataNodes: DataNode[]) {
-  return dataNodes.map((dataNode) => {
+  return dataNodes.map(dataNode => {
     return {
       id: String(dataNode.id),
       position: {
@@ -146,6 +146,7 @@ export interface DataNode {
   image?: string;
   tg?: string;
   dependencies?: number[]; // these are the ids of the nodes that this node depends on
+  label?: string;
 }
 
 const dagreGraph = new dagre.graphlib.Graph();
@@ -154,11 +155,7 @@ dagreGraph.setDefaultEdgeLabel(() => ({}));
 const nodeWidth = 300;
 const nodeHeight = 150;
 
-export const getLayoutedElements = (
-  nodes: Node[],
-  edges: Edge[],
-  direction = "TB"
-) => {
+export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = "TB") => {
   const isHorizontal = direction === "LR";
   dagreGraph.setGraph({ rankdir: direction });
 
@@ -172,7 +169,7 @@ export const getLayoutedElements = (
 
   dagre.layout(dagreGraph);
 
-  nodes.forEach((node) => {
+  nodes.forEach(node => {
     const nodeWithPosition = dagreGraph.node(node.id);
     node.targetPosition = isHorizontal ? Position.Left : Position.Top;
     node.sourcePosition = isHorizontal ? Position.Right : Position.Bottom;
