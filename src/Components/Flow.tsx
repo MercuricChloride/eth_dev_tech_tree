@@ -1,14 +1,15 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import ReactFlow, { MiniMap, Controls, Background, useNodesState, useEdgesState, addEdge, Node } from "reactflow";
 // 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
 import { DataNode } from "./DataNode";
 import { nodeData, edgeData, getLayoutedElements, DataNode as DataNodeType } from "../Data";
 import Modal from "./Modal";
+import CustomNode from "./CustomNode";
 
-const nodeTypes = {
-  dataNode: DataNode,
-};
+// const nodeTypes = {
+//   dataNode: DataNode,
+// };
 
 const { layoutNodes, layoutEdges } = getLayoutedElements(nodeData, edgeData, "LR");
 
@@ -35,6 +36,7 @@ export function Flow() {
   }
 
   const onConnect = useCallback((params: any) => setEdges(eds => addEdge(params, eds)), [setEdges]);
+  const nodeTypes = useMemo(() => ({ customNode: CustomNode }), []);
 
   return (
     <>
@@ -46,9 +48,15 @@ export function Flow() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         nodeTypes={nodeTypes}
+        nodeOrigin={[0.5, 0.5]}
         onNodeClick={(event, node: Node<DataNodeType>) => {
           console.log("This is the node clicked", node);
           showModal(node.data);
+        }}
+        fitViewOptions={{ duration: 2000 }}
+        fitView={true}
+        style={{
+          background: "#1A202C",
         }}
       >
         <MiniMap style={{ padding: "1rem" }} />
