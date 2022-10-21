@@ -1,5 +1,14 @@
-import React, { useCallback, useMemo, useState } from "react";
-import ReactFlow, { MiniMap, Controls, Background, useNodesState, useEdgesState, addEdge, Node } from "reactflow";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import ReactFlow, {
+  MiniMap,
+  Controls,
+  Background,
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  Node,
+  ReactFlowInstance,
+} from "reactflow";
 // 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
 import { DataNode } from "./DataNode";
@@ -17,6 +26,7 @@ export function Flow() {
   //   const [nodes, setNodes, onNodesChange] = useNodesState(layoutNodes);
   const [nodes, , onNodesChange] = useNodesState(layoutNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutEdges);
+  const [reactFlow, setReactFlow] = useState<ReactFlowInstance | null>(null);
 
   // Modal state
   const [modalData, setModalData] = useState<DataNodeType | null>(null);
@@ -38,6 +48,13 @@ export function Flow() {
   const onConnect = useCallback((params: any) => setEdges(eds => addEdge(params, eds)), [setEdges]);
   const nodeTypes = useMemo(() => ({ customNode: CustomNode }), []);
 
+  useEffect(() => {
+    if (reactFlow) {
+      const { x, y } = nodes[0].position;
+      reactFlow.setCenter(x, y, { duration: 2000, zoom: 0.75 });
+    }
+  }, [reactFlow]);
+
   return (
     <>
       {modalData && <Modal hideModal={hideModal} modalData={modalData} isModalOpen={Boolean(modalData)} />}
@@ -53,8 +70,11 @@ export function Flow() {
           console.log("This is the node clicked", node);
           showModal(node.data);
         }}
-        fitViewOptions={{ duration: 2000 }}
-        fitView={true}
+        onInit={reactFlowInstance => {
+          setReactFlow(reactFlowInstance);
+        }}
+        // fitViewOptions={{ duration: 2000 }}
+        // fitView={true}
         style={{
           background: "#1A202C",
         }}

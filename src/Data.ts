@@ -489,7 +489,7 @@ function getEdgesFromDataNodes(dataNodes: DataNode[]) {
           id: `${node.id}-${dependency}`,
           source: String(node.id),
           target: String(dependency),
-          type: "bezier",
+          type: "default",
           // label: "UNLOCKS",
           sourceHandle: "a",
           style: {
