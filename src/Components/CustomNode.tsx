@@ -6,7 +6,13 @@ function CustomNode({ data }: { data: DataNodeType }) {
   return (
     <>
       <Handle type="target" position={Position.Left} />
-      <div className="border-2 border-teal-500 px-3 py-5 text-white rounded-lg">
+      <div className="border-4 border-teal-500 px-3 py-3 text-white rounded-lg hover:border-teal-200 bg-slate-700 hover:bg-slate-500"
+        style={{
+          //width: "220px",
+          width: "120px",
+          textAlign: "center",
+        }}
+      >
         <p>{data.label}</p>
       </div>
       <Handle type="source" position={Position.Right} id="a" />

@@ -10,7 +10,6 @@ export function DataNode({ data }: NodeProps) {
         border: "1px solid #000",
         backgroundColor: "#fff",
         flexDirection: "column",
-        width: "150px",
         padding: "10px 25px",
       }}
     >

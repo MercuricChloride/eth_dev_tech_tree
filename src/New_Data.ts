@@ -166,13 +166,6 @@ export const dataNodes: DataNode[] = [
     dependencies: [23],
   },
   {
-    id: 22,
-    title: "Run Your Own Node",
-    description: "Learn about the execution and consensus layer by running your own node.",
-    link: "https://www.google.com",
-    image: "https://picsum.photos/200",
-  },
-  {
     id: 23,
     title: "HTTP Proxy",
     description: "Use an HTTP proxy to upgrade to a second RPC with no downtime.",

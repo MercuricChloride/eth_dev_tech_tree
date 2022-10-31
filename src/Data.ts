@@ -113,7 +113,7 @@ export const dataNodes: DataNode[] = [
   },
   {
     id: 15,
-    title: "'Deadman's' Recovery Multisig Build",
+    title: "'Deadman's' Recovery Multisig",
     description: "Complete a build using signatures.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
@@ -167,7 +167,7 @@ export const dataNodes: DataNode[] = [
   },
   {
     id: 22,
-    title: "Run Your Own Node",
+    title: "Run Your Own IPFS Node",
     description: "Learn about the execution and consensus layer by running your own node.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
@@ -323,7 +323,7 @@ export const dataNodes: DataNode[] = [
   },
   {
     id: 44,
-    title: "Scripting Challenge / Dashboard",
+    title: "Scripting Dashboard",
     description: "",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
@@ -412,7 +412,7 @@ export const dataNodes: DataNode[] = [
   },
   {
     id: 56,
-    title: "Signature Based Backend System",
+    title: "Signature Based Backend",
     description: "",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
@@ -420,8 +420,8 @@ export const dataNodes: DataNode[] = [
   },
   {
     id: 57,
-    title: "Sig Based System With Burner Delegates",
-    description: "",
+    title: "Sig System & Burner Delegates",
+    description: "Sig Based System With Burner Delegates",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
@@ -442,7 +442,7 @@ export const dataNodes: DataNode[] = [
   },
   {
     id: 60,
-    title: "Build an Example 'Hyperstructure'",
+    title: "Build a 'Hyperstructure'",
     description: "",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
@@ -535,17 +535,19 @@ export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = "T
 
   nodes.forEach(node => {
     const nodeWithPosition = dagreGraph.node(node.id);
+    console.log("nodeWithPosition", nodeWithPosition);
     node.targetPosition = isHorizontal ? Position.Left : Position.Top;
     node.sourcePosition = isHorizontal ? Position.Right : Position.Bottom;
     node.type = "customNode";
 
     node.position = {
-      x: nodeWithPosition.x - nodeWidth / 2,
-      y: nodeWithPosition.y - nodeHeight / 2,
+      x: nodeWithPosition.x,
+      y: nodeWithPosition.y / 1.5,
     };
 
     return node;
   });
+
   const layoutNodes = nodes;
   const layoutEdges = edges;
   return { layoutNodes, layoutEdges };

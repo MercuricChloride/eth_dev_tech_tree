@@ -50,8 +50,8 @@ export function Flow() {
 
   useEffect(() => {
     if (reactFlow) {
-      const { x, y } = nodes[0].position;
-      reactFlow.setCenter(x, y, { duration: 2000, zoom: 0.75 });
+      const { x, y } = nodes[3].position;
+      reactFlow.setCenter(x, y, { duration: 1500, zoom: 0.6 });
     }
   }, [reactFlow]);
 
@@ -79,9 +79,9 @@ export function Flow() {
           background: "#1A202C",
         }}
       >
-        <MiniMap style={{ padding: "1rem" }} />
+        <MiniMap nodeColor={"#64748B"} nodeStrokeWidth={50} nodeStrokeColor={"#334155"} />
         <Controls />
-        <Background />
+        <Background size={-1}/>
       </ReactFlow>
     </>
   );
