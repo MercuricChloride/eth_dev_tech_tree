@@ -475,7 +475,8 @@ export function getNodesFromDataNodes(dataNodes: DataNode[]) {
         image: dataNode.image,
         tg: dataNode.tg,
       },
-      type: "dataNode",
+      //type: "dataNode",
+      type: "customNode",
     };
   });
 }
@@ -494,6 +495,7 @@ function getEdgesFromDataNodes(dataNodes: DataNode[]) {
           sourceHandle: "a",
           style: {
             stroke: "#004747",
+            strokeWidth: 3,
           },
         });
       }
@@ -519,14 +521,15 @@ dagreGraph.setDefaultEdgeLabel(() => ({}));
 const nodeWidth = 300;
 const nodeHeight = 150;
 
-export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = "TB") => {
-  const isHorizontal = direction === "LR";
+export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => {
+  const isHorizontal = direction === 'LR';
   dagreGraph.setGraph({ rankdir: direction });
 
   nodes.forEach((node: Node) => {
     dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
   });
 
+  //edge source and target nodes
   edges.forEach((edge: Edge) => {
     dagreGraph.setEdge(edge.source, edge.target);
   });
@@ -541,8 +544,13 @@ export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = "T
     node.type = "customNode";
 
     node.position = {
-      x: nodeWithPosition.x,
-      y: nodeWithPosition.y / 1.5,
+      // For left-right
+      // x: nodeWithPosition.x,
+      // y: nodeWithPosition.y / 1.5,
+
+      // For top-bottom
+      x: nodeWithPosition.x / 1.5,
+      y: nodeWithPosition.y * 1.2,
     };
 
     return node;
