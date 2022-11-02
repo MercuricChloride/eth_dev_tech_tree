@@ -5,7 +5,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 1,
     title: "Challenge 0 🎨 Simple NFT",
-    description: "Create a simple NFT to learn basics of scaffold-eth.",
+    overview: "Create a simple NFT to learn basics of scaffold-eth.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://speedrunethereum.com/challenge/simple-nft-example",
     image: "https://speedrunethereum.com/assets/0.png",
     dependencies: [2],
@@ -13,7 +14,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 2,
     title: "Challenge 1 🥩 Staking App",
-    description: "Create a decentralized application where users can coordinate a group funding effort.",
+    overview: "Create a decentralized application where users can coordinate a group funding effort.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://speedrunethereum.com/challenge/decentralized-staking",
     image: "https://speedrunethereum.com/assets/1.png",
     dependencies: [3],
@@ -21,7 +23,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 3,
     title: "Challenge 2 🪙 Token Vendor",
-    description: "Create a decentralized, digital currency with a vending machine to buy and sell your tokens.",
+    overview: "Create a decentralized, digital currency with a vending machine to buy and sell your tokens.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://speedrunethereum.com/challenge/token-vendor",
     image: "https://speedrunethereum.com/assets/2.png",
     dependencies: [4],
@@ -29,7 +32,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 4,
     title: "Challenge 3 🎲 Dice Game",
-    description: "Hack a Dice Game contract by predicting the randomness on chain.",
+    overview: "Hack a Dice Game contract by predicting the randomness on chain",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://speedrunethereum.com/challenge/dice-game",
     image: "https://speedrunethereum.com/assets/dice.png",
     dependencies: [5, 6, 7, 8, 9, 13, 18, 41, 44, 47, 51, 58, 59, 60],
@@ -37,7 +41,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 5,
     title: "Smart Wallet",
-    description: "Build your own simple smart contract wallet that can setName on ENS",
+    overview: "Build your own simple smart contract wallet that can setName on ENS",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [33, 34, 35],
@@ -45,7 +50,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 6,
     title: "NFT Price Curve",
-    description: "Build an NFT where the minting price follows a price curve.",
+    overview: "Build an NFT where the minting price follows a price curve.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [10],
@@ -53,7 +59,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 7,
     title: "ERC20 Tokens",
-    description: "Build a simple ERC20 app.",
+    overview: "Build a simple ERC20 app.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [11],
@@ -61,7 +68,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 8,
     title: "DEX Challenge",
-    description: "Build a decentralized exchange.",
+    overview: "Build a decentralized exchange.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://t.me/+_NeUIJ664Tc1MzIx",
     image: "https://speedrunethereum.com/assets/4.png",
     dependencies: [12, 26, 36],
@@ -69,7 +77,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 9,
     title: "CRON Job Challenge",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [39, 40],
@@ -77,7 +86,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 10,
     title: "SVG NFTs",
-    description: "Create NFTs using on-chain SVG code.",
+    overview: "Create NFTs using on-chain SVG code.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://t.me/+J9PRea84c1U0Mzkx",
     image: "https://speedrunethereum.com/assets/nfts.png",
     dependencies: [27, 28, 29, 30, 31, 32],
@@ -85,21 +95,24 @@ export const dataNodes: DataNode[] = [
   {
     id: 11,
     title: "Token Multisender",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 12,
     title: "DEX Sandwich Attack",
-    description: "Sandwich attack a decentralized exhange.",
+    overview: "Sandwich attack a decentralized exhange.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 13,
     title: "Signature Based Challenge",
-    description: "Complete a build using signatures.",
+    overview: "Complete a build using signatures.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [14, 15, 16, 56],
@@ -107,21 +120,24 @@ export const dataNodes: DataNode[] = [
   {
     id: 14,
     title: "Order Book Challenge",
-    description: "Create an order book sign signatures.",
+    overview: "Create an order book sign signatures.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 15,
-    title: "'Deadman's' Recovery Multisig Build",
-    description: "Complete a build using signatures.",
+    title: "'Deadman's' Recovery Multisig",
+    overview: "Complete a build using signatures.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 16,
     title: "Challenge 6 Multisig",
-    description: "Build your own mulsitig.",
+    overview: "Build your own mulsitig.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://t.me/+mkNNF_yHsK8yMTcx",
     image: "https://speedrunethereum.com/assets/3.png",
     dependencies: [17],
@@ -129,7 +145,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 17,
     title: "MAAS Product 'Hyperchest'",
-    description: "Create a multisig as a service product - hyperchest",
+    overview: "Create a multisig as a service product - hyperchest",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [17],
@@ -137,7 +154,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 18,
     title: "Run Your Own Node",
-    description: "Learn about the execution and consensus layer by running your own node.",
+    overview: "Learn about the execution and consensus layer by running your own node.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [19, 20, 21, 22],
@@ -145,14 +163,16 @@ export const dataNodes: DataNode[] = [
   {
     id: 19,
     title: "Subgraph",
-    description: "Subgraph.",
+    overview: "Subgraph.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 20,
     title: "Build an Indexer",
-    description: "Build an Indexer.",
+    overview: "Build an Indexer.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [24, 25],
@@ -160,113 +180,129 @@ export const dataNodes: DataNode[] = [
   {
     id: 21,
     title: "RCP Server",
-    description: "Run your own RPC server for a live app.",
+    overview: "Run your own RPC server for a live app.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [23],
   },
   {
     id: 22,
-    title: "Run Your Own Node",
-    description: "Learn about the execution and consensus layer by running your own node.",
+    title: "Run Your Own IPFS Node",
+    overview: "Learn about the execution and consensus layer by running your own node.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 23,
     title: "HTTP Proxy",
-    description: "Use an HTTP proxy to upgrade to a second RPC with no downtime.",
+    overview: "Use an HTTP proxy to upgrade to a second RPC with no downtime.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 24,
     title: "Analytics App",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 25,
     title: "Tax App",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 26,
     title: "Arbitrage",
-    description: "Create two DEXs and create an arbitrage script.",
+    overview: "Create two DEXs and create an arbitrage script.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 27,
     title: "Signature Based NFL WL Mint",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 28,
     title: "Mainnet NFT",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 29,
     title: "Collision Oracle Game",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 30,
     title: "Future TTD Racing Game",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 31,
     title: "Merkle NFTs",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 32,
     title: "Composable NFTs",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 33,
     title: "Deadman's Switch",
-    description: "Build your own smart contract wallet that ",
+    overview: "Build your own smart contract wallet that ",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 34,
     title: "Social Recovery",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 35,
     title: "Multisig Extension",
-    description: "Fork multisig.lol and build something new.",
+    overview: "Fork multisig.lol and build something new.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 36,
     title: "Lending App",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [37, 38],
@@ -274,35 +310,40 @@ export const dataNodes: DataNode[] = [
   {
     id: 37,
     title: "Options",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 38,
     title: "Shorting",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 39,
     title: "Streaming App",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 40,
     title: "Automation App",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 41,
     title: "Etherscan API",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [42, 43],
@@ -310,21 +351,24 @@ export const dataNodes: DataNode[] = [
   {
     id: 42,
     title: "OpenSea API",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 43,
     title: "Chrome Extensions",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 44,
-    title: "Scripting Challenge / Dashboard",
-    description: "",
+    title: "Scripting Dashboard",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [45, 46],
@@ -332,21 +376,24 @@ export const dataNodes: DataNode[] = [
   {
     id: 45,
     title: "Hardhat Testing",
-    description: "Maybe something already broken",
+    overview: "Maybe something already broken",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 46,
     title: "Foundry Testing",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 47,
     title: "Circom Starter Kit",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [48],
@@ -354,7 +401,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 48,
     title: "Circom Contract State",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [49],
@@ -362,7 +410,8 @@ export const dataNodes: DataNode[] = [
   {
     id: 49,
     title: "zk-prove-membership",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [50],
@@ -370,14 +419,16 @@ export const dataNodes: DataNode[] = [
   {
     id: 50,
     title: "zk-voting-example",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 51,
     title: "Unchecked Math",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [52, 53, 54, 55],
@@ -385,72 +436,82 @@ export const dataNodes: DataNode[] = [
   {
     id: 52,
     title: "Delegatecall",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 53,
     title: "Gas Golf any BG Contract",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 54,
     title: "Ethernaut!",
-    description: "",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 55,
     title: "Reproduce Hacks",
-    description: "Reproduce the hacks found in Solidity by Example",
+    overview: "Reproduce the hacks found in Solidity by Example",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://solidity-by-example.org/",
     image: "https://picsum.photos/200",
   },
   {
     id: 56,
-    title: "Signature Based Backend System",
-    description: "",
+    title: "Signature Based Backend",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     dependencies: [57],
   },
   {
     id: 57,
-    title: "Sig Based System With Burner Delegates",
-    description: "",
+    title: "Sig System & Burner Delegates",
+    overview: "Sig Based System With Burner Delegates",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 58,
     title: "Make Soemthing New!",
-    description: "Fork any scaffold-eth branch and make something new.",
+    overview: "Fork any scaffold-eth branch and make something new.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://github.com/scaffold-eth/scaffold-eth-examples",
     image: "https://picsum.photos/200",
   },
   {
     id: 59,
     title: "Speedrunethereum!",
-    description: "Run through Speedrunethereum.com and help smooth out any edges.",
+    overview: "Run through Speedrunethereum.com and help smooth out any edges.",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://speedrunethereum.com/",
     image: "https://picsum.photos/200",
     dependencies: [61],
   },
   {
     id: 60,
-    title: "Build an Example 'Hyperstructure'",
-    description: "",
+    title: "Build a 'Hyperstructure'",
+    overview: "This is a filler overview",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
   {
     id: 61,
     title: "Create a New Speedrunethereum Challenge",
-    description: "Build a new challenge with an amazing readme",
+    overview: "Build a new challenge with an amazing readme",
+    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
   },
@@ -470,12 +531,14 @@ export function getNodesFromDataNodes(dataNodes: DataNode[]) {
       draggable: false,
       data: {
         label: dataNode.title,
+        overview: dataNode.overview,
         description: dataNode.description,
         link: dataNode.link,
         image: dataNode.image,
         tg: dataNode.tg,
       },
-      type: "dataNode",
+      //type: "dataNode",
+      type: "customNode",
     };
   });
 }
@@ -494,6 +557,7 @@ function getEdgesFromDataNodes(dataNodes: DataNode[]) {
           sourceHandle: "a",
           style: {
             stroke: "#004747",
+            strokeWidth: 3,
           },
         });
       }
@@ -505,6 +569,7 @@ function getEdgesFromDataNodes(dataNodes: DataNode[]) {
 export interface DataNode {
   id: number;
   title: string;
+  overview: string;
   description: string;
   link: string;
   image?: string;
@@ -519,14 +584,15 @@ dagreGraph.setDefaultEdgeLabel(() => ({}));
 const nodeWidth = 300;
 const nodeHeight = 150;
 
-export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = "TB") => {
-  const isHorizontal = direction === "LR";
+export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => {
+  const isHorizontal = direction === 'LR';
   dagreGraph.setGraph({ rankdir: direction });
 
   nodes.forEach((node: Node) => {
     dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
   });
 
+  //edge source and target nodes
   edges.forEach((edge: Edge) => {
     dagreGraph.setEdge(edge.source, edge.target);
   });
@@ -535,17 +601,24 @@ export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = "T
 
   nodes.forEach(node => {
     const nodeWithPosition = dagreGraph.node(node.id);
+    console.log("nodeWithPosition", nodeWithPosition);
     node.targetPosition = isHorizontal ? Position.Left : Position.Top;
     node.sourcePosition = isHorizontal ? Position.Right : Position.Bottom;
     node.type = "customNode";
 
     node.position = {
-      x: nodeWithPosition.x - nodeWidth / 2,
-      y: nodeWithPosition.y - nodeHeight / 2,
+      // For left-right
+      // x: nodeWithPosition.x,
+      // y: nodeWithPosition.y / 1.5,
+
+      // For top-bottom
+      x: nodeWithPosition.x / 1.5,
+      y: nodeWithPosition.y * 1.2,
     };
 
     return node;
   });
+
   const layoutNodes = nodes;
   const layoutEdges = edges;
   return { layoutNodes, layoutEdges };

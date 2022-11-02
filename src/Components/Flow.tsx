@@ -11,7 +11,6 @@ import ReactFlow, {
 } from "reactflow";
 // 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
-import { DataNode } from "./DataNode";
 import { nodeData, edgeData, getLayoutedElements, DataNode as DataNodeType } from "../Data";
 import Modal from "./Modal";
 import CustomNode from "./CustomNode";
@@ -20,10 +19,10 @@ import CustomNode from "./CustomNode";
 //   dataNode: DataNode,
 // };
 
-const { layoutNodes, layoutEdges } = getLayoutedElements(nodeData, edgeData, "LR");
+const { layoutNodes, layoutEdges } = getLayoutedElements(nodeData, edgeData, /*"LR"*/ "TB" );
 
 export function Flow() {
-  //   const [nodes, setNodes, onNodesChange] = useNodesState(layoutNodes);
+  //const [nodes, setNodes, onNodesChange] = useNodesState(layoutNodes);
   const [nodes, , onNodesChange] = useNodesState(layoutNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutEdges);
   const [reactFlow, setReactFlow] = useState<ReactFlowInstance | null>(null);
@@ -48,10 +47,11 @@ export function Flow() {
   const onConnect = useCallback((params: any) => setEdges(eds => addEdge(params, eds)), [setEdges]);
   const nodeTypes = useMemo(() => ({ customNode: CustomNode }), []);
 
+  //Pan and zoom when loading page
   useEffect(() => {
     if (reactFlow) {
-      const { x, y } = nodes[0].position;
-      reactFlow.setCenter(x, y, { duration: 2000, zoom: 0.75 });
+      const { x, y } = nodes[3].position;
+      reactFlow.setCenter(x, y, { duration: 1500, zoom: 0.6 });
     }
   }, [reactFlow]);
 
@@ -79,9 +79,11 @@ export function Flow() {
           background: "#1A202C",
         }}
       >
-        <MiniMap style={{ padding: "1rem" }} />
+        {/*
+        <MiniMap nodeColor={"#64748B"} nodeStrokeWidth={50} nodeStrokeColor={"#334155"} />
         <Controls />
-        <Background />
+        */}
+        <Background size={-1}/>
       </ReactFlow>
     </>
   );
