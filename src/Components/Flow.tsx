@@ -79,8 +79,10 @@ export function Flow() {
           background: "#1A202C",
         }}
       >
+        {/*
         <MiniMap nodeColor={"#64748B"} nodeStrokeWidth={50} nodeStrokeColor={"#334155"} />
         <Controls />
+        */}
         <Background size={-1}/>
       </ReactFlow>
     </>

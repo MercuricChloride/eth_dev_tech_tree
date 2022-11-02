@@ -35,27 +35,30 @@ const Modal = ({ modalData, hideModal, isModalOpen }: Props) => {
 
   return (
     <div
-      className="w-full h-full bg-[rgba(0,0,0,0.5)] fixed flex items-center justify-center top-0 left-0 z-[10000]"
+      className="OutsideBackground w-full h-full bg-[rgba(0,0,0,0.5)] fixed flex items-center justify-center top-0 left-0 z-[10000]"
       onClick={closeModal}
       ref={modalRef}
     >
-      <div className="w-[700px] h-[200px] shadow-lg bg-[#1A202C]  flex relative z-10 rounded-lg p-2 text-white space-x-4">
+      <div className="OverallModal w-[60%] h-[60%] shadow-lg bg-[#1A202C] flex relative z-10 rounded-lg p-8 pt-2 pb-5 text-white space-x-4 border-2 border-teal-600">
+        {/*
         <div className="h-[192px] w-[180px] border-2 border-teal-700 rounded-lg">
           <img className="rounded-lg bg-white h-full max-h-[192px] w-full" src={modalData.image} alt="challenge" />
         </div>
-        <div className="flex flex-col justify-between">
-          <div className="flex flex-col justify-start items-start leading-5 text-white  space-y-4 mt-4">
-            <h1 className="text-lg">{modalData.label}</h1>
+        */}
+        <div className="InsideOfPadding flex flex-col justify-between">
+          <div className="DescriptionContent flex flex-col justify-start items-start leading-5 text-white space-y-4 mt-4">
+            <h1 className="TitleText font-bold text-2xl text-teal-600">{modalData.label}</h1>
+            <p>{modalData.overview}</p>
             <p>{modalData.description}</p>
           </div>
-          <a href={modalData.link} target="_blank" rel="noreferrer" className="block mb-2">
-            <button className=" bg-teal-600 text-white rounded-md hover:bg-teal-700 w-full h-full mb-4">
+          <a href={modalData.link} target="_blank" rel="noreferrer" className="LinkOfButton mb-2 w-[50%]">
+            <button className="ChallengeButton bg-teal-600 text-white rounded-md hover:bg-teal-700 w-full h-full mb-4">
               Take the Challenge
             </button>
           </a>
         </div>
         <div
-          className="cursor-pointer absolute top-2 right-2 w-[32px] h-[32px] text-2xl p-0 z-10"
+          className="ExitingX cursor-pointer absolute top-2 right-2 w-[2%] h-[2%] text-2xl p-0 z-10"
           aria-label="Close modal"
           onClick={() => hideModal()}
         >
