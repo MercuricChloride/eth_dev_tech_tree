@@ -11,7 +11,6 @@ interface Props {
 
 const Modal = ({ modalData, hideModal, isModalOpen }: Props) => {
   const modalRef = useRef(null);
-
   const closeModal = (e: React.MouseEvent) => {
     if (modalRef.current === e.target) {
       hideModal();
@@ -49,13 +48,15 @@ const Modal = ({ modalData, hideModal, isModalOpen }: Props) => {
           <div className="DescriptionContent flex flex-col justify-start items-start leading-5 text-white space-y-4 mt-4">
             <h1 className="TitleText font-bold text-2xl text-teal-600">{modalData.label}</h1>
             <p>{modalData.overview}</p>
-            <p>{modalData.description}</p>
+            <p className="whitespace-pre-wrap">{modalData.description}</p>
           </div>
-          <a href={modalData.link} target="_blank" rel="noreferrer" className="LinkOfButton mb-2 w-[50%]">
-            <button className="ChallengeButton bg-teal-600 text-white rounded-md hover:bg-teal-700 w-full h-full mb-4">
-              Take the Challenge
-            </button>
-          </a>
+          <div className="text-center">
+            <a href={modalData.link} target="_blank" rel="noreferrer" className="LinkOfButton mb-2">
+              <button className="ChallengeButton bg-teal-600 text-white rounded-md hover:bg-teal-700 w-full h-full mb-4  w-[50%]">
+                Take the Challenge
+              </button>
+            </a>
+          </div>
         </div>
         <div
           className="ExitingX cursor-pointer absolute top-2 right-2 w-[2%] h-[2%] text-2xl p-0 z-10"

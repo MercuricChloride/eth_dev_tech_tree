@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import ReactFlow, {
-  MiniMap,
-  Controls,
   Background,
   useNodesState,
   useEdgesState,
@@ -53,7 +51,7 @@ export function Flow() {
       const { x, y } = nodes[3].position;
       reactFlow.setCenter(x, y, { duration: 1500, zoom: 0.6 });
     }
-  }, [reactFlow]);
+  }, [reactFlow, nodes]);
 
   return (
     <>
