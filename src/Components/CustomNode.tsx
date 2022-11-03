@@ -1,10 +1,17 @@
 import { Handle, Position } from "reactflow";
 import { DataNode as DataNodeType } from "../Data";
+import ReactTooltip from "react-tooltip";
 
-function CustomNode({ data }: { data: DataNodeType }) {
+function CustomNode({ data, id: nodeId }: { data: DataNodeType, id: string }) {
   // console.log("⚡️ ~ file: Flow.tsx ~ line 26 ~ CustomNode ~ data", data);
   return (
-    <>
+    <div
+      data-tip={true}
+      data-for={nodeId}
+    >
+      <ReactTooltip id={nodeId} place="right" className="w-64">
+        <span>{data.overview}</span>
+      </ReactTooltip>
       {/*
       <Handle type="target" position={Position.Left} />
       */}
@@ -22,7 +29,8 @@ function CustomNode({ data }: { data: DataNodeType }) {
       <Handle type="source" position={Position.Right} id="a" />
       */}
       <Handle type="source" position={Position.Bottom} id="a" />
-    </>
+      <ReactTooltip />
+    </div>
   );
 }
 
