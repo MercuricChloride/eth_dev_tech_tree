@@ -6,7 +6,7 @@ export const dataNodes: DataNode[] = [
     id: 1,
     title: "Challenge 0 🎨 Simple NFT",
     overview: "Create a simple NFT to learn basics of scaffold-eth.",
-    description: " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
+    description: "This is a long description.\n\nThis is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://speedrunethereum.com/challenge/simple-nft-example",
     image: "https://speedrunethereum.com/assets/0.png",
     dependencies: [2],
