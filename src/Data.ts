@@ -537,7 +537,6 @@ export function getNodesFromDataNodes(dataNodes: DataNode[]) {
         image: dataNode.image,
         tg: dataNode.tg,
       },
-      //type: "dataNode",
       type: "customNode",
     };
   });

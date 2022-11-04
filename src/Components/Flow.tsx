@@ -13,10 +13,6 @@ import { nodeData, edgeData, getLayoutedElements, DataNode as DataNodeType } fro
 import Modal from "./Modal";
 import CustomNode from "./CustomNode";
 
-// const nodeTypes = {
-//   dataNode: DataNode,
-// };
-
 const { layoutNodes, layoutEdges } = getLayoutedElements(nodeData, edgeData, /*"LR"*/ "TB" );
 
 export function Flow() {
@@ -64,6 +60,7 @@ export function Flow() {
         onConnect={onConnect}
         nodeTypes={nodeTypes}
         nodeOrigin={[0.5, 0.5]}
+
         onNodeClick={(event, node: Node<DataNodeType>) => {
           console.log("This is the node clicked", node);
           showModal(node.data);
@@ -75,12 +72,9 @@ export function Flow() {
         // fitView={true}
         style={{
           background: "#1A202C",
+          zIndex: 0,
         }}
       >
-        {/*
-        <MiniMap nodeColor={"#64748B"} nodeStrokeWidth={50} nodeStrokeColor={"#334155"} />
-        <Controls />
-        */}
         <Background size={-1}/>
       </ReactFlow>
     </>
