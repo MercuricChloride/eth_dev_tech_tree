@@ -13,10 +13,6 @@ import { nodeData, edgeData, getLayoutedElements, DataNode as DataNodeType } fro
 import Modal from "./Modal";
 import CustomNode from "./CustomNode";
 
-// const nodeTypes = {
-//   dataNode: DataNode,
-// };
-
 const { layoutNodes, layoutEdges } = getLayoutedElements(nodeData, edgeData, /*"LR"*/ "TB" );
 
 export function Flow() {
