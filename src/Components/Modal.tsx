@@ -34,11 +34,11 @@ const Modal = ({ modalData, hideModal, isModalOpen }: Props) => {
 
   return (
     <div
-      className="OutsideBackground w-full h-full bg-[rgba(0,0,0,0.5)] fixed flex items-center justify-center top-0 left-0 z-[10000]"
+      className="OutsideBackground w-full h-full bg-[rgba(0,0,0,0.5)] fixed flex items-center justify-center top-0 left-0 z-[10000] "
       onClick={closeModal}
       ref={modalRef}
     >
-      <div className="OverallModal overflow-auto w-[60%] h-[75%] md:h-[60%] shadow-lg bg-[#1A202C] flex relative z-10 rounded-lg p-8 pt-2 pb-5 text-white space-x-4 border-2 border-teal-600">
+      <div className="OverallModal  scrollbar-track-inherit scrollbar-thin scrollbar-track-rounded-md scrollbar-thumb-rounded-md scrollbar-thumb-teal-600 overflow-auto w-[60%] h-[75%] md:h-[60%] shadow-lg bg-[#1A202C] flex relative z-10 rounded-lg p-8 pt-2 pb-5 text-white space-x-4 border-2 border-teal-600">
         {/*
         <div className="h-[192px] w-[180px] border-2 border-teal-700 rounded-lg">
           <img className="rounded-lg bg-white h-full max-h-[192px] w-full" src={modalData.image} alt="challenge" />
@@ -52,14 +52,14 @@ const Modal = ({ modalData, hideModal, isModalOpen }: Props) => {
           </div>
           <div className="text-center">
             <a href={modalData.link} target="_blank" rel="noreferrer" className="LinkOfButton mb-2">
-              <button className="ChallengeButton bg-teal-600 text-white rounded-md hover:bg-teal-700 w-full h-full mb-4 w-full md:w-[50%]">
+              <button className="ChallengeButton bg-teal-600 text-white rounded-md hover:bg-teal-700 w-full h-full mb-4 md:w-[50%]">
                 Take the Challenge
               </button>
             </a>
           </div>
         </div>
         <div
-          className="ExitingX cursor-pointer absolute top-2 right-2 text-2xl p-0 z-10"
+          className="ExitingX cursor-pointer absolute top-2 right-3 text-2xl p-0 z-10"
           aria-label="Close modal"
           onClick={() => hideModal()}
         >
