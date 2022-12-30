@@ -1,19 +1,22 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import ReactFlow, {
-  Background,
-  useNodesState,
-  useEdgesState,
-  addEdge,
-  Node,
-  ReactFlowInstance,
-} from "reactflow";
+import ReactFlow, { Background, useNodesState, useEdgesState, addEdge, Node, ReactFlowInstance } from "reactflow";
 // 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
-import { nodeData, edgeData, getLayoutedElements, DataNode as DataNodeType } from "../Data";
+import {
+  nodeData,
+  edgeData,
+  getLayoutedElements,
+  DataNode as DataNodeType,
+  convertToNestedDataNode,
+  getParentNodes,
+  dataNodes,
+  trimmedDataNodes,
+  getAllNodeDepth,
+} from "../Data";
 import Modal from "./Modal";
 import CustomNode from "./CustomNode";
 
-const { layoutNodes, layoutEdges } = getLayoutedElements(nodeData, edgeData, /*"LR"*/ "TB" );
+const { layoutNodes, layoutEdges } = getLayoutedElements(nodeData, edgeData, /*"LR"*/ "TB");
 
 export function Flow() {
   //const [nodes, setNodes, onNodesChange] = useNodesState(layoutNodes);
@@ -49,6 +52,15 @@ export function Flow() {
     }
   }, [reactFlow, nodes]);
 
+  useEffect(() => {
+    const nodesWithDepth = getAllNodeDepth(trimmedDataNodes);
+    console.log(
+      "nodesWithDepth",
+      nodesWithDepth.sort((a, b) => a.depth - b.depth),
+    );
+    debugger;
+  });
+
   return (
     <>
       {modalData && <Modal hideModal={hideModal} modalData={modalData} isModalOpen={Boolean(modalData)} />}
@@ -77,7 +89,7 @@ export function Flow() {
         <MiniMap nodeColor={"#64748B"} nodeStrokeWidth={50} nodeStrokeColor={"#334155"} />
         <Controls />
         */}
-        <Background size={-1}/>
+        <Background size={-1} />
       </ReactFlow>
     </>
   );
