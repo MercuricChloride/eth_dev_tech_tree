@@ -1,20 +1,43 @@
-//import { Edge, Node, Position } from "reactflow";
-//import dagre from "dagre";
+import Elk, { ElkEdgeSection, ElkExtendedEdge, ElkNode } from "elkjs/lib/elk.bundled.js";
+import { Edge, Node } from "reactflow";
+const elk = new Elk();
 
-interface NewDataStructure {
-  id: number;
+const NODE_WIDTH = 200;
+const NODE_HEIGHT = 100;
+const ELK_LAYOUT = "radial";
+// const TREE_LAYOUT_OPTIONS = {
+//   direction: "DOWN",
+//   nodeDimensionsIncludeLabels: true,
+//   spacingFactor: 1.5,
+//   ranker: "tight-tree",
+//   rankDir: "TB",
+//   rankSep: 100,
+//   edgeSep: 100,
+//   nodeSep: 100,
+// };
+
+export interface DataNode {
+  id: string;
   title: string;
   overview: string;
   description: string;
   link: string;
   image?: string;
   telegram?: string;
-  children?: NewDataStructure[];
+  children?: DataNode[];
 }
 
-const newNodes: NewDataStructure[] = [
+export const dataNodes: DataNode[] = [
   {
-    id: 1,
+    id: "0",
+    title: "SpeedRunEthereum.com",
+    overview: "An educational public good",
+    description: "An educational public good",
+    link: "https://speedrunethereum.com",
+    children: [
+
+  {
+    id: "1",
     title: "Challenge 0 🎨 Simple NFT",
     overview: "Create a simple NFT to learn basics of scaffold-eth.",
     description:
@@ -23,7 +46,7 @@ const newNodes: NewDataStructure[] = [
     image: "https://speedrunethereum.com/assets/0.png",
     children: [
       {
-        id: 2,
+        id: "2",
         title: "Challenge 1 🥩 Staking App",
         overview: "Create a decentralized application where users can coordinate a group funding effort.",
         description:
@@ -32,7 +55,7 @@ const newNodes: NewDataStructure[] = [
         image: "https://speedrunethereum.com/assets/1.png",
       },
       {
-        id: 3,
+        id: "3",
         title: "Challenge 2 🪙 Token Vendor",
         overview: "Create a decentralized, digital currency with a vending machine to buy and sell your tokens.",
         description:
@@ -41,7 +64,7 @@ const newNodes: NewDataStructure[] = [
         image: "https://speedrunethereum.com/assets/2.png",
       },
       {
-        id: 4,
+        id: "4",
         title: "Challenge 3 🎲 Dice Game",
         overview: "Hack a Dice Game contract by predicting the randomness on chain",
         description:
@@ -51,7 +74,7 @@ const newNodes: NewDataStructure[] = [
       },
     ],
   }, {
-    id: 5,
+    id: "5",
     title: "Smart Wallet",
     overview: "Build your own simple smart contract wallet that can setName on ENS",
     description:
@@ -59,7 +82,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 33,
+      id: "33",
       title: "Deadman's Switch",
       overview: "Build your own smart contract wallet that ",
       description:
@@ -67,7 +90,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 34,
+      id: "34",
       title: "Social Recovery",
       overview: "This is a filler overview",
       description:
@@ -75,7 +98,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 35,
+      id: "35",
       title: "Multisig Extension",
       overview: "Fork multisig.lol and build something new.",
       description:
@@ -84,7 +107,7 @@ const newNodes: NewDataStructure[] = [
       image: "https://picsum.photos/200",
     }]
   }, {
-    id: 6,
+    id: "6",
     title: "NFT Price Curve",
     overview: "Build an NFT where the minting price follows a price curve.",
     description:
@@ -92,7 +115,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 10,
+      id: "10",
       title: "SVG NFTs",
       overview: "Create NFTs using on-chain SVG code.",
       description:
@@ -100,7 +123,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://t.me/+J9PRea84c1U0Mzkx",
       image: "https://speedrunethereum.com/assets/nfts.png",
       children: [{
-        id: 27,
+        id: "27",
         title: "Signature Based NFL WL Mint",
         overview: "This is a filler overview",
         description:
@@ -108,7 +131,7 @@ const newNodes: NewDataStructure[] = [
         link: "https://www.google.com",
         image: "https://picsum.photos/200",
       }, {
-        id: 28,
+        id: "28",
         title: "Mainnet NFT",
         overview: "This is a filler overview",
         description:
@@ -116,7 +139,7 @@ const newNodes: NewDataStructure[] = [
         link: "https://www.google.com",
         image: "https://picsum.photos/200",
       }, {
-        id: 29,
+        id: "29",
         title: "Collision Oracle Game",
         overview: "This is a filler overview",
         description:
@@ -124,7 +147,7 @@ const newNodes: NewDataStructure[] = [
         link: "https://www.google.com",
         image: "https://picsum.photos/200",
       }, {
-        id: 30,
+        id: "30",
         title: "Future TTD Racing Game",
         overview: "This is a filler overview",
         description:
@@ -132,7 +155,7 @@ const newNodes: NewDataStructure[] = [
         link: "https://www.google.com",
         image: "https://picsum.photos/200",
       }, {
-        id: 31,
+        id: "31",
         title: "Merkle NFTs",
         overview: "This is a filler overview",
         description:
@@ -140,7 +163,7 @@ const newNodes: NewDataStructure[] = [
         link: "https://www.google.com",
         image: "https://picsum.photos/200",
       }, {
-        id: 32,
+        id: "32",
         title: "Composable NFTs",
         overview: "This is a filler overview",
         description:
@@ -151,7 +174,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 7,
+    id: "7",
     title: "ERC20 Tokens",
     overview: "Build a simple ERC20 app.",
     description:
@@ -159,7 +182,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 11,
+      id: "11",
       title: "Token Multisender",
       overview: "This is a filler overview",
       description:
@@ -169,7 +192,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 8,
+    id: "8",
     title: "DEX Challenge",
     overview: "Build a decentralized exchange.",
     description:
@@ -177,7 +200,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://t.me/+_NeUIJ664Tc1MzIx",
     image: "https://speedrunethereum.com/assets/4.png",
     children: [{
-      id: 12,
+      id: "12",
       title: "DEX Sandwich Attack",
       overview: "Sandwich attack a decentralized exhange.",
       description:
@@ -185,7 +208,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 26,
+      id: "26",
       title: "Arbitrage",
       overview: "Create two DEXs and create an arbitrage script.",
       description:
@@ -193,7 +216,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 36,
+      id: "36",
       title: "Lending App",
       overview: "This is a filler overview",
       description:
@@ -201,7 +224,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
       children: [{
-        id: 37,
+        id: "37",
         title: "Options",
         overview: "This is a filler overview",
         description:
@@ -209,7 +232,7 @@ const newNodes: NewDataStructure[] = [
         link: "https://www.google.com",
         image: "https://picsum.photos/200",
       }, {
-        id: 38,
+        id: "38",
         title: "Shorting",
         overview: "This is a filler overview",
         description:
@@ -220,7 +243,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 9,
+    id: "9",
     title: "CRON Job Challenge",
     overview: "This is a filler overview",
     description:
@@ -228,7 +251,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 39,
+      id: "39",
       title: "Streaming App",
       overview: "This is a filler overview",
       description:
@@ -236,7 +259,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 40,
+      id: "40",
       title: "Automation App",
       overview: "This is a filler overview",
       description:
@@ -246,7 +269,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 13,
+    id: "13",
     title: "Signature Based Challenge",
     overview: "Complete a build using signatures.",
     description:
@@ -254,7 +277,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 14,
+      id: "14",
       title: "Order Book Challenge",
       overview: "Create an order book sign signatures.",
       description:
@@ -262,7 +285,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 15,
+      id: "15",
       title: "'Deadman's' Recovery Multisig",
       overview: "Complete a build using signatures.",
       description:
@@ -270,7 +293,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 16,
+      id: "16",
       title: "Challenge 6 Multisig",
       overview: "Build your own mulsitig.",
       description:
@@ -278,7 +301,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://t.me/+mkNNF_yHsK8yMTcx",
       image: "https://speedrunethereum.com/assets/3.png",
       children: [{
-        id: 17,
+        id: "17",
         title: "MAAS Product 'Hyperchest'",
         overview: "Create a multisig as a service product - hyperchest",
         description:
@@ -287,7 +310,7 @@ const newNodes: NewDataStructure[] = [
         image: "https://picsum.photos/200",
       }],
     }, {
-      id: 56,
+      id: "56",
       title: "Signature Based Backend",
       overview: "This is a filler overview",
       description:
@@ -295,7 +318,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
       children: [{
-        id: 57,
+        id: "57",
         title: "Sig System & Burner Delegates",
         overview: "Sig Based System With Burner Delegates",
         description:
@@ -306,7 +329,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 18,
+    id: "18",
     title: "Run Your Own Node",
     overview: "Learn about the execution and consensus layer by running your own node.",
     description:
@@ -314,7 +337,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 19,
+      id: "19",
       title: "Subgraph",
       overview: "Subgraph.",
       description:
@@ -322,7 +345,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 20,
+      id: "20",
       title: "Build an Indexer",
       overview: "Build an Indexer.",
       description:
@@ -330,7 +353,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
       children: [{
-        id: 24,
+        id: "24",
         title: "Analytics App",
         overview: "This is a filler overview",
         description:
@@ -338,7 +361,7 @@ const newNodes: NewDataStructure[] = [
         link: "https://www.google.com",
         image: "https://picsum.photos/200",
       }, {
-        id: 25,
+        id: "25",
         title: "Tax App",
         overview: "This is a filler overview",
         description:
@@ -347,7 +370,7 @@ const newNodes: NewDataStructure[] = [
         image: "https://picsum.photos/200",
       }],
     }, {
-      id: 21,
+      id: "21",
       title: "RCP Server",
       overview: "Run your own RPC server for a live app.",
       description:
@@ -355,7 +378,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
       children: [{
-        id: 23,
+        id: "23",
         title: "HTTP Proxy",
         overview: "Use an HTTP proxy to upgrade to a second RPC with no downtime.",
         description:
@@ -364,7 +387,7 @@ const newNodes: NewDataStructure[] = [
         image: "https://picsum.photos/200",
       }],
     }, {
-      id: 22,
+      id: "22",
       title: "Run Your Own IPFS Node",
       overview: "Learn about the execution and consensus layer by running your own node.",
       description:
@@ -374,7 +397,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 41,
+    id: "41",
     title: "Etherscan API",
     overview: "This is a filler overview",
     description:
@@ -382,7 +405,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 42,
+      id: "42",
       title: "OpenSea API",
       overview: "This is a filler overview",
       description:
@@ -390,7 +413,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 43,
+      id: "43",
       title: "Chrome Extensions",
       overview: "This is a filler overview",
       description:
@@ -400,7 +423,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 44,
+    id: "44",
     title: "Scripting Dashboard",
     overview: "This is a filler overview",
     description:
@@ -408,7 +431,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 45,
+      id: "45",
       title: "Hardhat Testing",
       overview: "Maybe something already broken",
       description:
@@ -416,7 +439,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 46,
+      id: "46",
       title: "Foundry Testing",
       overview: "This is a filler overview",
       description:
@@ -426,7 +449,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 47,
+    id: "47",
     title: "Circom Starter Kit",
     overview: "This is a filler overview",
     description:
@@ -434,7 +457,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 48,
+      id: "48",
       title: "Circom Contract State",
       overview: "This is a filler overview",
       description:
@@ -442,7 +465,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
       children: [{
-        id: 49,
+        id: "49",
         title: "zk-prove-membership",
         overview: "This is a filler overview",
         description:
@@ -450,7 +473,7 @@ const newNodes: NewDataStructure[] = [
         link: "https://www.google.com",
         image: "https://picsum.photos/200",
         children: [{
-          id: 50,
+          id: "50",
           title: "zk-voting-example",
           overview: "This is a filler overview",
           description:
@@ -462,7 +485,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 51,
+    id: "51",
     title: "Unchecked Math",
     overview: "This is a filler overview",
     description:
@@ -470,7 +493,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
     children: [{
-      id: 52,
+      id: "52",
       title: "Delegatecall",
       overview: "This is a filler overview",
       description:
@@ -478,7 +501,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 53,
+      id: "53",
       title: "Gas Golf any BG Contract",
       overview: "This is a filler overview",
       description:
@@ -486,7 +509,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 54,
+      id: "54",
       title: "Ethernaut!",
       overview: "This is a filler overview",
       description:
@@ -494,7 +517,7 @@ const newNodes: NewDataStructure[] = [
       link: "https://www.google.com",
       image: "https://picsum.photos/200",
     }, {
-      id: 55,
+      id: "55",
       title: "Reproduce Hacks",
       overview: "Reproduce the hacks found in Solidity by Example",
       description:
@@ -504,7 +527,7 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 58,
+    id: "58",
     title: "Make Soemthing New!",
     overview: "Fork any scaffold-eth branch and make something new.",
     description:
@@ -513,7 +536,7 @@ const newNodes: NewDataStructure[] = [
     image: "https://picsum.photos/200",
   },
   {
-    id: 59,
+    id: "59",
     title: "Speedrunethereum!",
     overview: "Run through Speedrunethereum.com and help smooth out any edges.",
     description:
@@ -521,7 +544,7 @@ const newNodes: NewDataStructure[] = [
     link: "https://speedrunethereum.com/",
     image: "https://picsum.photos/200",
     children: [{
-      id: 61,
+      id: "61",
       title: "Create a New Speedrunethereum Challenge",
       overview: "Build a new challenge with an amazing readme",
       description:
@@ -531,26 +554,22 @@ const newNodes: NewDataStructure[] = [
     }],
   },
   {
-    id: 60,
+    id: "60",
     title: "Build a 'Hyperstructure'",
     overview: "This is a filler overview",
     description:
       " This is a long description.  This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description.",
     link: "https://www.google.com",
     image: "https://picsum.photos/200",
-  }]
+  }]}]
 
-const nodeData = getNodesFromDataNodes(newNodes);
-//const edgeData = getEdgesFromDataNodes(newNodes);
+export async function renderDataNodes(dataNodes: DataNode[], center = 500): Promise<[Node[], Edge[]]> {
 
-function getNodesFromDataNodes(dataNodes: NewDataStructure[]) {
-
-  function flattenToOneArray(dataNodes: NewDataStructure[]): any {
+  function flattenToOneArray(dataNodes: DataNode[]): any {
     return dataNodes.flatMap((node) => {
       if (!node.children) {
         return [dataNodeToNode(node)]
       } else {
-        // handle the children
         return [
           dataNodeToNode(node),
           ...flattenToOneArray(node.children)
@@ -559,102 +578,82 @@ function getNodesFromDataNodes(dataNodes: NewDataStructure[]) {
     })
   }
 
-  function dataNodeToNode(dataNode: NewDataStructure) {
-    const {title, overview, description, link, image} = dataNode;
+  function dataNodeToNode(dataNode: DataNode) {
+    const {title, overview, description, link, image, children} = dataNode;
+    const childIds = children?.map((child) => child.id) || [];
     return {
       id: String(dataNode.id),
-      position: {
-        x: dataNodes.indexOf(dataNode) * 100,
-        y: dataNodes.indexOf(dataNode) * 50,
-      },
-      draggable: false,
+      width: NODE_WIDTH,
+      height: NODE_HEIGHT,
       data: {
         label: title,
         overview: overview,
         description: description,
+        childIds,
         link: link,
         image: image,
         tg: dataNode.telegram,
       },
-      //type: "dataNode",
-      type: "customNode",
+      // type: "customNode",
+      type: "default"
     }
   }
 
-  return flattenToOneArray(dataNodes);
-}
+  interface IEdge {
+    id: string;
+    sources: string[];
+    source: string;
+    targets: string[];
+    target: string;
+  }
 
-/*
-function getEdgesFromDataNodes(dataNodes: NewDataStructure[]) {
-  const edges: Edge[] = [];
-  for (const node of dataNodes) {
-    if (node.children) {
-      for (const dependency of node.children) {
-        edges.push({
-          id: `${node.id}-${dependency}`,
-          source: String(node.id),
-          target: String(dependency),
-          type: "default",
-          // label: "UNLOCKS",
-          sourceHandle: "a",
-          style: {
-            stroke: "#004747",
-            strokeWidth: 3,
-          },
-        });
+  function dataNodeToEdges(dataNode: DataNode): IEdge[] {
+    if(!dataNode.children) {
+      return [];
+    } else {
+      return [
+        ...dataNode.children.map((child) => {
+          const source = String(dataNode.id);
+          const target = String(child.id);
+          return {
+            id: `${dataNode.id}-${child.id}`,
+            source,
+            sources: [source],
+            target,
+            targets: [target],
+          }
+        }),
+        ...dataNode.children.flatMap(dataNodeToEdges)
+      ]
+    }
+  }
+
+
+  const edges = dataNodes.flatMap(dataNodeToEdges);
+
+  const graph: ElkNode = {
+    id: 'root',
+    children: flattenToOneArray(dataNodes),
+    edges,
+    width: 10000,
+    height: 10000,
+  }
+
+  const layout = await elk.layout(graph, {
+    layoutOptions: {
+      'elk.algorithm': ELK_LAYOUT,
+    }
+  })
+
+  const nodesWithPosition = layout.children?.map((node) => {
+    return {
+      ...node,
+      position: {
+        x: node.x || 0 + center,
+        y: node.y || 0 + center,
       }
     }
-  }
-  return edges;
+  })
+
+  return [nodesWithPosition as Node[], edges as IEdge[]];
 }
-
-const dagreGraph = new dagre.graphlib.Graph();
-dagreGraph.setDefaultEdgeLabel(() => ({}));
-
-const nodeWidth = 300;
-const nodeHeight = 150;
-
-const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = "TB") => {
-  const isHorizontal = direction === "LR";
-  dagreGraph.setGraph({ rankdir: direction });
-
-  nodes.forEach((node: Node) => {
-    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
-  });
-
-  //edge source and target nodes
-  edges.forEach((edge: Edge) => {
-    dagreGraph.setEdge(edge.source, edge.target);
-  });
-
-  dagre.layout(dagreGraph);
-
-  nodes.forEach(node => {
-    const nodeWithPosition = dagreGraph.node(node.id);
-    console.log("nodeWithPosition", nodeWithPosition);
-    node.targetPosition = isHorizontal ? Position.Left : Position.Top;
-    node.sourcePosition = isHorizontal ? Position.Right : Position.Bottom;
-    node.type = "customNode";
-
-    node.position = {
-      // For left-right
-      // x: nodeWithPosition.x,
-      // y: nodeWithPosition.y / 1.5,
-
-      // For top-bottom
-      x: nodeWithPosition.x / 1.5,
-      y: nodeWithPosition.y * 1.2,
-    };
-
-    return node;
-  });
-
-  const layoutNodes = nodes;
-  const layoutEdges = edges;
-  return { layoutNodes, layoutEdges };
-};
-*/
-
-console.log("Hey")
-console.log('testing the flatten function:', getNodesFromDataNodes(newNodes));
-

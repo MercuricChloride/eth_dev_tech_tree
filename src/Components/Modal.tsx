@@ -46,7 +46,7 @@ const Modal = ({ modalData, hideModal, isModalOpen }: Props) => {
         */}
         <div className="InsideOfPadding flex flex-col justify-between gap-5">
           <div className="DescriptionContent flex flex-col justify-start items-start leading-5 text-white space-y-4 mt-4">
-            <h1 className="TitleText font-bold text-2xl text-teal-600">{modalData.label}</h1>
+            <h1 className="TitleText font-bold text-2xl text-teal-600">{modalData.title}</h1>
             <p>{modalData.overview}</p>
             <p className="whitespace-pre-wrap">{modalData.description}</p>
           </div>

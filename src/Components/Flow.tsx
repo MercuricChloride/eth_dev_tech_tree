@@ -1,33 +1,20 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import ReactFlow, { Background, useNodesState, useEdgesState, addEdge, Node, ReactFlowInstance } from "reactflow";
 // 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
-import {
-  nodeData,
-  edgeData,
-  getLayoutedElements,
-  DataNode as DataNodeType,
-  convertToNestedDataNode,
-  getParentNodes,
-  dataNodes,
-  trimmedDataNodes,
-  getAllNodeDepth,
-} from "../Data";
+import { dataNodes, renderDataNodes, DataNode } from "../Data";
 import Modal from "./Modal";
 import CustomNode from "./CustomNode";
 
-const { layoutNodes, layoutEdges } = getLayoutedElements(nodeData, edgeData, /*"LR"*/ "TB");
-
 export function Flow() {
-  //const [nodes, setNodes, onNodesChange] = useNodesState(layoutNodes);
-  const [nodes, , onNodesChange] = useNodesState(layoutNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(layoutEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [reactFlow, setReactFlow] = useState<ReactFlowInstance | null>(null);
 
   // Modal state
-  const [modalData, setModalData] = useState<DataNodeType | null>(null);
+  const [modalData, setModalData] = useState<DataNode | null>(null);
 
-  function showModal(data: DataNodeType) {
+  function showModal(data: DataNode) {
     console.log(`called with data`, data);
     if (data) {
       setModalData(data);
@@ -44,22 +31,23 @@ export function Flow() {
   const onConnect = useCallback((params: any) => setEdges(eds => addEdge(params, eds)), [setEdges]);
   const nodeTypes = useMemo(() => ({ customNode: CustomNode }), []);
 
+  async function init() {
+    const [positionedNodes, positionedEdges] = await renderDataNodes(dataNodes);
+    setNodes(positionedNodes);
+    setEdges(positionedEdges);
+  }
+
+  useEffect(() => {
+    init();
+  }, []);
+
   //Pan and zoom when loading page
   useEffect(() => {
     if (reactFlow) {
-      const { x, y } = nodes[3].position;
+      const { x, y } = nodes[0].position;
       reactFlow.setCenter(x, y, { duration: 1500, zoom: 0.6 });
     }
   }, [reactFlow, nodes]);
-
-  useEffect(() => {
-    const nodesWithDepth = getAllNodeDepth(trimmedDataNodes);
-    console.log(
-      "nodesWithDepth",
-      nodesWithDepth.sort((a, b) => a.depth - b.depth),
-    );
-    debugger;
-  });
 
   return (
     <>
@@ -72,7 +60,7 @@ export function Flow() {
         onConnect={onConnect}
         nodeTypes={nodeTypes}
         nodeOrigin={[0.5, 0.5]}
-        onNodeClick={(event, node: Node<DataNodeType>) => {
+        onNodeClick={(event, node: Node<DataNode>) => {
           console.log("This is the node clicked", node);
           showModal(node.data);
         }}
