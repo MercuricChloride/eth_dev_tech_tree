@@ -10,6 +10,7 @@ export function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [reactFlow, setReactFlow] = useState<ReactFlowInstance | null>(null);
+  const [animation, setAnimation] = useState<boolean>(false);
 
   // Modal state
   const [modalData, setModalData] = useState<DataNode | null>(null);
@@ -41,13 +42,35 @@ export function Flow() {
     init();
   }, []);
 
+  // write an function that pans to each node in a sequence
+  // then pans to the first node
+  function panToNodes(ids: string[] = []) {
+    let i = 0;
+    const intervalId = setInterval(() => {
+      panToNode(ids[i]);
+      i++;
+      if (i > ids.length - 1) {
+        panToNode("0", true);
+        clearInterval(intervalId);
+      }
+    }, 2500);
+  }
+
+  function panToNode(id: string, overview = false) {
+    const node = nodes.find(node => node.id === id);
+    if (node) {
+      const { x, y } = node.position;
+      reactFlow?.setCenter(x, y, { duration: 1500, zoom: overview ? 0.6 : 2 });
+    }
+  }
+
   //Pan and zoom when loading page
   useEffect(() => {
-    if (reactFlow) {
-      const { x, y } = nodes[0].position;
-      reactFlow.setCenter(x, y, { duration: 1500, zoom: 0.6 });
+    if (reactFlow && !animation) {
+      panToNodes(["1", "60", "18", "7"]);
+      setAnimation(true);
     }
-  }, [reactFlow, nodes]);
+  }, [reactFlow]);
 
   return (
     <>
@@ -67,8 +90,8 @@ export function Flow() {
         onInit={reactFlowInstance => {
           setReactFlow(reactFlowInstance);
         }}
-        // fitViewOptions={{ duration: 2000 }}
-        // fitView={true}
+        fitViewOptions={{ duration: 1500 }}
+        fitView={true}
         style={{
           background: "#1A202C",
         }}

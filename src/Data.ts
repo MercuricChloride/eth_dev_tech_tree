@@ -72,6 +72,15 @@ export const dataNodes: DataNode[] = [
         link: "https://speedrunethereum.com/challenge/dice-game",
         image: "https://speedrunethereum.com/assets/dice.png",
       },
+      {
+        id: "420",
+        title: "Super cool challenge",
+        overview: "Hack a Dice Game contract by predicting the randomness on chain",
+        description:
+          "🎰 Randomness is tricky on a public deterministic blockchain. The block hash is the result proof-of-work (for now) and some builders use this as a weak form of randomness. This challenge will give you an example of a contract using block hash to create random numbers. This randomness is exploitable. Other, stronger forms of randomness include commit/reveal schemes, oracles, or VRF from Chainlink.\n\n👍 One day soon, randomness will be built into the Ethereum protocol!\n\n💬 Dice Game is a contract that allows users to roll the dice to try and win the prize. If players roll either a 0, 1, or 2 they will win the current prize amount. The initial prize is 10% of the contract's balance, which starts out at .05 Eth.\n\n🧤 Every time a player rolls the dice, they are required to send .002 Eth. 40 percent of this value is added to the current prize amount while the other 60 percent stays in the contract to fund future prizes. Once a prize is won, the new prize amount is set to 10% of the total balance of the DiceGame contract.\n\n🧨 Your job is to attack the Dice Game contract! You will create a new contract that will predict the randomness ahead of time and only roll the dice when you're guaranteed to be a winner!",
+        link: "https://speedrunethereum.com/challenge/dice-game",
+        image: "https://speedrunethereum.com/assets/dice.png",
+      },
     ],
   }, {
     id: "5",
@@ -642,6 +651,8 @@ export async function renderDataNodes(dataNodes: DataNode[], center = 500): Prom
   const layout = await elk.layout(graph, {
     layoutOptions: {
       'elk.algorithm': ELK_LAYOUT,
+      // 'elk.radial.radius': '100',
+      // 'elk.spacing.nodeNode': '200'
     }
   })
 
